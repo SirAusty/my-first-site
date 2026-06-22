@@ -70,12 +70,13 @@ button{font-family:var(--f);cursor:pointer;border:none;background:none;}
 }
 .nav__left{display:flex;align-items:center;gap:32px;}
 .nav__logo{
-  font-size:13px;
-  font-weight:800;
-  letter-spacing:0.22em;
-  text-transform:uppercase;
-  color:var(--white);
-  white-space:nowrap;
+  display:flex;
+  align-items:center;
+}
+.nav__logo img{
+  height:28px;
+  width:auto;
+  object-fit:contain;
 }
 .nav__links{display:flex;gap:28px;list-style:none;}
 .nav__links a{
@@ -609,11 +610,14 @@ button{font-family:var(--f);cursor:pointer;border:none;background:none;}
   border-top:1px solid var(--border);
 }
 .footer__logo{
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,.3);
+  display:flex;
+  align-items:center;
+}
+.footer__logo img{
+  height:22px;
+  width:auto;
+  object-fit:contain;
+  opacity:0.6;
 }
 .footer__copy{
   font-size:11px;
@@ -682,7 +686,9 @@ button{font-family:var(--f);cursor:pointer;border:none;background:none;}
 <!-- ═══ NAV ═══ -->
 <header class="nav" id="nav">
   <div class="nav__left">
-    <a class="nav__logo" href="#">Kims Streetwear</a>
+    <a class="nav__logo" href="#">
+      <img src="kims-logo.png" alt="Kims Streetwear" />
+    </a>
     <ul class="nav__links">
       <li><a href="#catalog">Catalog</a></li>
       <li><a href="#about">About</a></li>
@@ -844,7 +850,9 @@ button{font-family:var(--f);cursor:pointer;border:none;background:none;}
 
 <!-- ═══ FOOTER ═══ -->
 <footer class="footer">
-  <span class="footer__logo">Kims Streetwear</span>
+  <span class="footer__logo">
+    <img src="kims-logo.png" alt="Kims Streetwear" />
+  </span>
   <span class="footer__copy">© 2026 Kims Streetwear. All rights reserved.</span>
   <nav class="footer__nav">
     <a href="#catalog">Catalog</a>
