@@ -57,9 +57,9 @@ button{font-family:var(--f);cursor:pointer;border:none;background:none;}
   position:fixed;
   top:0;left:0;right:0;
   z-index:900;
-  height:60px;
+  height:70px; /* Increased from 60px to give logo room */
   display:grid;
-  grid-template-columns:1fr auto 1fr;
+  grid-template-columns:auto 1fr auto; /* Adjusted to optimize logo space */
   align-items:center;
   padding:0 32px;
   background:rgba(9,9,11,0.88);
@@ -74,7 +74,7 @@ button{font-family:var(--f);cursor:pointer;border:none;background:none;}
   align-items:center;
 }
 .nav__logo img{
-  height:28px;
+  height:44px; /* Significantly increased height */
   width:auto;
   object-fit:contain;
 }
@@ -614,10 +614,10 @@ button{font-family:var(--f);cursor:pointer;border:none;background:none;}
   align-items:center;
 }
 .footer__logo img{
-  height:22px;
+  height:36px; /* Increased from 22px */
   width:auto;
   object-fit:contain;
-  opacity:0.6;
+  opacity:0.85; /* Increased opacity for clarity */
 }
 .footer__copy{
   font-size:11px;
@@ -968,4 +968,3 @@ button{font-family:var(--f);cursor:pointer;border:none;background:none;}
 
 </body>
 </html>
-
