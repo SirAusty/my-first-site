@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<!-- Lock viewport scale to prevent mobile pinch-zooming out -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 <title>KIMS STREETWEAR</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -25,14 +26,20 @@
    RESET
 ══════════════════════════════════════════════ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{font-size:16px;scroll-behavior:smooth;}
+html{
+  font-size:16px;
+  scroll-behavior:smooth;
+  width: 100%;
+  overflow-x: hidden; /* Strict horizontal lock */
+}
 body{
   background:var(--black);
   color:var(--white);
   font-family:var(--f);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
-  overflow-x:hidden;
+  overflow-x:hidden; /* Strict horizontal lock */
+  width: 100%;
 }
 img{display:block;max-width:100%;}
 a{color:inherit;text-decoration:none;}
@@ -67,18 +74,21 @@ button{font-family:var(--f);cursor:pointer;border:none;background:none;}
   -webkit-backdrop-filter:blur(20px);
   border-bottom:1px solid var(--border);
   transition:border-color .3s;
+  max-width: 100vw;
 }
 .nav__left{display:flex;align-items:center;gap:32px;}
 .nav__logo{
   display:flex;
   align-items:center;
+  background: #FFFFFF;
+  padding: 6px 14px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 .nav__logo img{
-  height:44px;
+  height:30px;
   width:auto;
   object-fit:contain;
-  /* Adjusts brightness/contrast automatically so dark text stands out on a dark background */
-  filter: brightness(1.3) contrast(1.2);
 }
 .nav__links{display:flex;gap:28px;list-style:none;}
 .nav__links a{
@@ -614,13 +624,14 @@ button{font-family:var(--f);cursor:pointer;border:none;background:none;}
 .footer__logo{
   display:flex;
   align-items:center;
+  background: #FFFFFF;
+  padding: 4px 10px;
+  border-radius: 4px;
 }
 .footer__logo img{
-  height:36px;
+  height:24px;
   width:auto;
   object-fit:contain;
-  /* Keeps the footer logo clear and bright */
-  filter: brightness(1.3) contrast(1.2);
 }
 .footer__copy{
   font-size:11px;
@@ -647,8 +658,23 @@ button{font-family:var(--f);cursor:pointer;border:none;background:none;}
   .nav__links{display:none;}
 }
 @media(max-width:768px){
-  .nav{padding:0 20px;}
+  .nav{
+    padding:0 16px;
+    height: 60px;
+  }
+  .nav__left{gap:12px;}
+  .nav__logo{
+    padding: 4px 8px;
+  }
+  .nav__logo img{
+    height:22px; /* Scales box-logo background to safely match narrow views */
+  }
   .nav__links{display:none;}
+  .nav__right{gap:8px;}
+  .nav__cta{
+    font-size:9px;
+    padding:6px 12px;
+  }
   .hero{padding:0 24px 72px;}
   .section{padding:72px 24px;}
   .grid{grid-template-columns:repeat(2,1fr);}
