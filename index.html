@@ -57,9 +57,9 @@ button{font-family:var(--f);cursor:pointer;border:none;background:none;}
   position:fixed;
   top:0;left:0;right:0;
   z-index:900;
-  height:70px; /* Increased from 60px to give logo room */
+  height:70px;
   display:grid;
-  grid-template-columns:auto 1fr auto; /* Adjusted to optimize logo space */
+  grid-template-columns:auto 1fr auto;
   align-items:center;
   padding:0 32px;
   background:rgba(9,9,11,0.88);
@@ -74,9 +74,11 @@ button{font-family:var(--f);cursor:pointer;border:none;background:none;}
   align-items:center;
 }
 .nav__logo img{
-  height:44px; /* Significantly increased height */
+  height:44px;
   width:auto;
   object-fit:contain;
+  /* Adjusts brightness/contrast automatically so dark text stands out on a dark background */
+  filter: brightness(1.3) contrast(1.2);
 }
 .nav__links{display:flex;gap:28px;list-style:none;}
 .nav__links a{
@@ -614,10 +616,11 @@ button{font-family:var(--f);cursor:pointer;border:none;background:none;}
   align-items:center;
 }
 .footer__logo img{
-  height:36px; /* Increased from 22px */
+  height:36px;
   width:auto;
   object-fit:contain;
-  opacity:0.85; /* Increased opacity for clarity */
+  /* Keeps the footer logo clear and bright */
+  filter: brightness(1.3) contrast(1.2);
 }
 .footer__copy{
   font-size:11px;
@@ -968,3 +971,4 @@ button{font-family:var(--f);cursor:pointer;border:none;background:none;}
 
 </body>
 </html>
+
